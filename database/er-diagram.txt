@@ -1,0 +1,14 @@
+ER DIAGRAM (TEXT)
+-----------------
+USERS (id PK)
+  | 1 --- N (created_by_id)
+  v
+PROJECTS (id PK)
+  | 1 --- N
+  v
+TASKS (id PK, project_id FK, assigned_user_id FK)
+  ^
+  | 1 --- N (assigned_user_id)
+USERS
+
+USERS N --- N PROJECTS via PROJECT_MEMBERS(project_id, user_id)

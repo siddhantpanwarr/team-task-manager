@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f3f4f6;
+  color: #111827;
+}
+.app-header {
+  background: #1f2937;
+  color: white;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.app-header nav a {
+  color: white;
+  margin-right: 12px;
+  text-decoration: none;
+}
+.app-main {
+  padding: 20px;
+}
+.auth-card, .panel, .card {
+  background: white;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+.auth-card {
+  max-width: 420px;
+  margin: 40px auto;
+}
+input, textarea, select, button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+button {
+  border: none;
+  background: #2563eb;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+.project-item, .task-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+.task-item {
+  display: flex;
+  justify-content: space-between;
+}
+.error {
+  color: #dc2626;
+}
+.badge {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  color: white;
+}
+.badge.TODO { background: #6b7280; }
+.badge.IN_PROGRESS { background: #d97706; }
+.badge.DONE { background: #16a34a; }
+.status-group {
+  min-width: 180px;
+}
+.user-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

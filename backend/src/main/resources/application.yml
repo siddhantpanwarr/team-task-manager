@@ -2,27 +2,22 @@ server:
   port: ${PORT:8080}
 
 spring:
-  autoconfigure:
-    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
 
-# (Optional: keep your old config commented for later use)
-
-# spring:
-#   datasource:
-#     url: ${DB_URL:jdbc:mysql://localhost:3306/team_task_manager?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}
-#     username: ${DB_USERNAME:root}
-#     password: ${DB_PASSWORD:password}
-#   jpa:
-#     hibernate:
-#       ddl-auto: update
-#     show-sql: false
-#     properties:
-#       hibernate:
-#         format_sql: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
 
 app:
   jwt:
-    secret: ${JWT_SECRET:replace-with-at-least-32-characters-secret-key}
-    expiration-ms: ${JWT_EXPIRATION_MS:86400000}
+    secret: ${JWT_SECRET:mysecretkey12345678901234567890}
+    expiration-ms: 86400000
   cors:
-    allowed-origins: ${ALLOWED_ORIGINS:http://localhost:5173}
+    allowed-origins: "*"

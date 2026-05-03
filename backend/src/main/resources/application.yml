@@ -2,17 +2,23 @@ server:
   port: ${PORT:8080}
 
 spring:
-  datasource:
-    url: ${DB_URL:jdbc:mysql://localhost:3306/team_task_manager?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}
-    username: ${DB_USERNAME:root}
-    password: ${DB_PASSWORD:password}
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: false
-    properties:
-      hibernate:
-        format_sql: true
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+
+# (Optional: keep your old config commented for later use)
+
+# spring:
+#   datasource:
+#     url: ${DB_URL:jdbc:mysql://localhost:3306/team_task_manager?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}
+#     username: ${DB_USERNAME:root}
+#     password: ${DB_PASSWORD:password}
+#   jpa:
+#     hibernate:
+#       ddl-auto: update
+#     show-sql: false
+#     properties:
+#       hibernate:
+#         format_sql: true
 
 app:
   jwt:
